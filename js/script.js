@@ -22,7 +22,7 @@ document.getElementById('eta').innerHTML = etaUtente;
 
 let prezzoAlChilometro = 0.21;
 // console.log(prezzoAlChilometro);
-let prezzo = chilometri * prezzoAlChilometro;
+let prezzo = (chilometri * prezzoAlChilometro).toFixed(2);
 // console.log(prezzo);
 
 // dichiarazione delle variabili const js
@@ -32,7 +32,7 @@ const minorenni = 17;
 // elenco delle condizioni di scondo 
 
 if (eta > over65) {
-    prezzo = prezzo - ((prezzo * 40)/ 100);
+    prezzo = prezzo - ((prezzo * 40) / 100).toFixed(2);
     // console.log(prezzo);
     document.getElementById('prezzokm').innerHTML = 
     `
@@ -40,7 +40,7 @@ if (eta > over65) {
     `;
 }
 else if (eta <= minorenni) {
-    prezzo = prezzo - ((prezzo * 20)/100);
+    prezzo = prezzo - ((prezzo * 20) / 100).toFixed(2);
     // console.log(prezzo);
     document.getElementById('prezzokm').innerHTML = `
     <span>Il prezzo del biglietto &egrave; di ${prezzo} &euro;
